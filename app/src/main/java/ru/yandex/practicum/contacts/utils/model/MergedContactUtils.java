@@ -13,7 +13,7 @@ import ru.yandex.practicum.contacts.model.MergedContact;
 
 public class MergedContactUtils {
 
-    public static boolean contains(MergedContact contact, String query) {
+    public static boolean contains(MergedContact contact, String query){
         final String lowerCaseQuery = query.toLowerCase();
         if (TextUtils.isEmpty(lowerCaseQuery)) {
             return true;

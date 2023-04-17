@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import ru.yandex.practicum.contacts.presentation.base.BaseBottomSheetViewModel;
 import ru.yandex.practicum.contacts.presentation.sort.model.SortType;
 
-public class SortViewModel extends BaseBottomSheetViewModel {
+public class SortViewModel extends BaseBottomSheetViewModel{
 
     private final UiState uiState = new UiState();
     private final MutableLiveData<List<SortTypeUI>> sortTypesLiveDate = new MutableLiveData<>();
@@ -20,27 +20,27 @@ public class SortViewModel extends BaseBottomSheetViewModel {
     private SortType defaultSortType;
     private SortType selectedSortType;
 
-    public void init(SortType defaultSortType) {
+    public void init(SortType defaultSortType){
         this.defaultSortType = defaultSortType;
         this.selectedSortType = defaultSortType;
         updateSortTypes();
         updateUiState();
     }
 
-    public void onSortTypeItemClick(SortTypeUI sortType) {
+    public void onSortTypeItemClick(SortTypeUI sortType){
         selectedSortType = sortType.getSortType();
         updateSortTypes();
         updateUiState();
     }
 
     @Override
-    public void onApplyClick() {
+    public void onApplyClick(){
         uiState.newSelectedSortType = selectedSortType;
         updateUiState();
     }
 
     @Override
-    public void onResetClick() {
+    public void onResetClick(){
         selectedSortType = defaultSortType;
         updateSortTypes();
         updateUiState();
@@ -54,7 +54,7 @@ public class SortViewModel extends BaseBottomSheetViewModel {
         return uiStateLiveDate;
     }
 
-    private void updateSortTypes() {
+    private void updateSortTypes(){
         final SortType[] sortTypes = SortType.values();
         final List<SortTypeUI> sortTypesUi = Arrays.stream(sortTypes)
                 .map(sortType -> new SortTypeUI(sortType, Objects.equals(sortType, selectedSortType)))
@@ -62,12 +62,12 @@ public class SortViewModel extends BaseBottomSheetViewModel {
         sortTypesLiveDate.setValue(sortTypesUi);
     }
 
-    private void updateUiState() {
+    private void updateUiState(){
         uiState.isApplyEnable = defaultSortType != selectedSortType;
         uiStateLiveDate.setValue(uiState);
     }
 
-    static class UiState {
+    static class UiState{
         public boolean isApplyEnable = false;
         @Nullable public SortType newSelectedSortType = null;
     }

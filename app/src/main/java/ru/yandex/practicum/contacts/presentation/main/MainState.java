@@ -12,7 +12,7 @@ import ru.yandex.practicum.contacts.model.ContactType;
 import ru.yandex.practicum.contacts.model.MergedContact;
 import ru.yandex.practicum.contacts.presentation.sort.model.SortType;
 
-public class MainState {
+public class MainState{
 
     private final SortType defaultSortType = SortType.BY_NAME;
     private final Set<ContactType> defaultContactTypes = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(ContactType.values())));

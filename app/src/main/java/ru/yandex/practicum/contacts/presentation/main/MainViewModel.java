@@ -30,7 +30,7 @@ import ru.yandex.practicum.contacts.presentation.sort.model.SortType;
 import ru.yandex.practicum.contacts.utils.java.ThreadUtils;
 import ru.yandex.practicum.contacts.utils.model.MergedContactUtils;
 
-public class MainViewModel extends AndroidViewModel {
+public class MainViewModel extends AndroidViewModel{
 
     private final ContactSourceRepository contactSourceRepository;
     private final ContactRepository contactRepository;
@@ -43,7 +43,7 @@ public class MainViewModel extends AndroidViewModel {
     private final MainState state = new MainState();
     private final UiState uiState = new UiState();
 
-    public MainViewModel(@NonNull Application application) {
+    public MainViewModel(@NonNull Application application){
         super(application);
         contactSourceRepository = new ContactSourceRepository(application);
         contactRepository = new ContactRepository(application);
@@ -60,7 +60,7 @@ public class MainViewModel extends AndroidViewModel {
         return uiStateLiveDate;
     }
 
-    public void initLoading() {
+    public void initLoading(){
         final Set<ContactSource> sources = contactSourceRepository.getAllContactSources();
         final List<String> sourceNames = sources.stream()
                 .map(ContactSource::getName)
@@ -91,7 +91,7 @@ public class MainViewModel extends AndroidViewModel {
         updateUiState();
     }
 
-    public void updateSortType(SortType sortType) {
+    public void updateSortType(SortType sortType){
         state.setSortType(sortType);
         updateBadges();
         mapContactsAndUpdate();

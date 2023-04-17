@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import ru.yandex.practicum.contacts.model.Contact;
 
-public class ContactUtils {
+public class ContactUtils{
 
     public static String getDisplayName(Contact contact) {
         final String fullName = getFullName(contact);
@@ -22,21 +22,21 @@ public class ContactUtils {
         return "";
     }
 
-    public static String getFullName(Contact contact) {
+    public static String getFullName(Contact contact){
         final String firstMiddle = (contact.getFirstName() + " " + contact.getMiddleName()).trim();
         final String suffixComma = TextUtils.isEmpty(contact.getSuffix()) ? "" : ", " + contact.getSuffix();
         return (contact.getPrefix() + " " + contact.getSurname() + " " + firstMiddle + suffixComma).trim();
     }
 
-    public static String getFirstPhone(Contact contact) {
+    public static String getFirstPhone(Contact contact){
         return !contact.getPhoneNumbers().isEmpty() ? contact.getPhoneNumbers().get(0).getValue().trim() : "";
     }
 
-    public static String getFirstNormalizedPhone(Contact contact) {
+    public static String getFirstNormalizedPhone(Contact contact){
         return !contact.getPhoneNumbers().isEmpty() ? contact.getPhoneNumbers().get(0).getNormalizedNumber().trim() : "";
     }
 
-    public static String getFirstEmail(Contact contact) {
+    public static String getFirstEmail(Contact contact){
         return !contact.getEmails().isEmpty() ? contact.getEmails().get(0).getValue().trim() : "";
     }
 }
