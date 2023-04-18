@@ -18,10 +18,10 @@ public class Debouncer<T> {
     }
 
     @SuppressWarnings("unchecked")
-    private final Handler handler = new Handler(Looper.getMainLooper()) {
+    private final Handler handler = new Handler(Looper.getMainLooper()){
         @Override
-        public void handleMessage(@NonNull Message message) {
-            if (message.what == MESSAGE_ID) {
+        public void handleMessage(@NonNull Message message){
+            if (message.what == MESSAGE_ID){
                 listener.onValueUpdate((T) message.obj);
                 return;
             }
@@ -29,7 +29,7 @@ public class Debouncer<T> {
         }
     };
 
-    public void updateValue(T value) {
+    public void updateValue(T value){
         final Message message = Message.obtain(handler, MESSAGE_ID, value);
         handler.removeMessages(MESSAGE_ID);
         handler.sendMessageDelayed(message, DELAY);

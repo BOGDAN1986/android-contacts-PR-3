@@ -11,7 +11,7 @@ public class Constants {
         public static final String THREEMA = "ch.threema.app";
     }
 
-    public static class StorageType{
+    public static class StorageType {
         public static final String SMT_PRIVATE = "smt_private" ;
         public static final String GOOGLE = "Google";
         public static final String TELEGRAM = "Telegram";
@@ -22,7 +22,4 @@ public class Constants {
         public static final String PHONE_STORAGE = "Phone storage";
         public static final String PHONE_STORAGE_PRIVATE = "Phone storage (hidden)";
     }
-
-
-
 }

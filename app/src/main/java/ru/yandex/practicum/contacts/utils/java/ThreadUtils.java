@@ -6,7 +6,7 @@ import android.os.Looper;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class ThreadUtils {
+public class ThreadUtils{
 
     public static <T> void runAsync(Supplier<T> supplier, Consumer<T> consumer) {
         final Handler handler = new Handler(Looper.getMainLooper());

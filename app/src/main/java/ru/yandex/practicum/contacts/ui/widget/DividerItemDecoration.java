@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import ru.yandex.practicum.contacts.utils.android.ContextUtils;
 
 
-public class DividerItemDecoration extends RecyclerView.ItemDecoration {
+public class DividerItemDecoration extends RecyclerView.ItemDecoration{
 
     public static final int HORIZONTAL = LinearLayout.HORIZONTAL;
     public static final int VERTICAL = LinearLayout.VERTICAL;
@@ -57,7 +57,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
-    private void drawVertical(Canvas canvas, RecyclerView parent) {
+    private void drawVertical(Canvas canvas, RecyclerView parent){
         canvas.save();
         final int left;
         final int right;

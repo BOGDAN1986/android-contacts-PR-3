@@ -12,7 +12,7 @@ import ru.yandex.practicum.contacts.utils.Constants;
 public class ContactTypeUtils {
 
     @DrawableRes
-    public static int getIconRes(@NonNull ContactType type) {
+    public static int getIconRes(@NonNull ContactType type){
         switch (type) {
             case TELEGRAM:
                 return R.drawable.ic_type_telegram;
@@ -33,7 +33,7 @@ public class ContactTypeUtils {
         }
     }
 
-    public static FilterContactType toFilterContactType(ContactType type) {
+    public static FilterContactType toFilterContactType(ContactType type){
         switch (type) {
             case TELEGRAM:
                 return FilterContactType.TELEGRAM;

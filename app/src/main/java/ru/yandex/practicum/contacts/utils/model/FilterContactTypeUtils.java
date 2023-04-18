@@ -7,10 +7,10 @@ import ru.yandex.practicum.contacts.R;
 import ru.yandex.practicum.contacts.model.ContactType;
 import ru.yandex.practicum.contacts.presentation.filter.model.FilterContactType;
 
-public class FilterContactTypeUtils {
+public class FilterContactTypeUtils{
 
     @StringRes
-    public static int getStringRes(FilterContactType contactType) {
+    public static int getStringRes(FilterContactType contactType){
         switch (contactType) {
             case ALL:
                 return R.string.filter_contact_type_all;

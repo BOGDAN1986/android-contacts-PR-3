@@ -28,18 +28,18 @@ import ru.yandex.practicum.contacts.utils.Constants;
 import ru.yandex.practicum.contacts.utils.android.ContextUtils;
 import ru.yandex.practicum.contacts.utils.android.CursorUtils;
 
-public class ContactSourceRepository {
+public class ContactSourceRepository{
 
     private final Context context;
 
     private boolean wasLocalAccountInitialized = false;
 
-    public ContactSourceRepository(Context context) {
+    public ContactSourceRepository(Context context){
         this.context = context;
     }
 
-    public Set<ContactSource> getAllContactSources() {
-        if (!ContextUtils.hasContactPermissions(context)) {
+    public Set<ContactSource> getAllContactSources(){
+        if (!ContextUtils.hasContactPermissions(context)){
             return Collections.emptySet();
         }
         if (!wasLocalAccountInitialized) {

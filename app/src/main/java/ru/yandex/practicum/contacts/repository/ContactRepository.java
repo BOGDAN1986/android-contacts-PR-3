@@ -35,8 +35,8 @@ public class ContactRepository {
         this.context = context;
     }
 
-    public List<Contact> getContacts(Collection<String> sources) {
-        if (!ContextUtils.hasContactPermissions(context)) {
+    public List <Contact> getContacts(Collection<String> sources){
+        if (!ContextUtils.hasContactPermissions(context)){
             return Collections.emptyList();
         }
 

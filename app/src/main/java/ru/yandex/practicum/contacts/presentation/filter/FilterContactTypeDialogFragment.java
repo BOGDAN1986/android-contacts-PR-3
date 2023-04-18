@@ -53,7 +53,7 @@ public class FilterContactTypeDialogFragment extends BaseBottomSheetDialogFragme
         adapter.setItems(filterTypes);
     }
 
-    private void updateState(FilterContactTypeViewModel.UiState state) {
+    private void updateState(FilterContactTypeViewModel.UiState state){
         binding.applyButton.setEnabled(state.isApplyEnable);
 
         if (!state.newSelectedContactTypes.isEmpty()) {

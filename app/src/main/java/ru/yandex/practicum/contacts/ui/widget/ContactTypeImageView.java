@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import ru.yandex.practicum.contacts.model.ContactType;
 import ru.yandex.practicum.contacts.utils.model.ContactTypeUtils;
 
-public class ContactTypeImageView extends StackImageView<ContactType> {
+public class ContactTypeImageView extends StackImageView<ContactType>{
 
     public ContactTypeImageView(Context context) {
         super(context);

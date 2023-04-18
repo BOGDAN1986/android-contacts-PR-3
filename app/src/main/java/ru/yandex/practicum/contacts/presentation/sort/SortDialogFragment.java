@@ -41,7 +41,7 @@ public class SortDialogFragment extends BaseBottomSheetDialogFragment<SortViewMo
         viewModel.getUiStateLiveDate().observe(this, this::updateState);
     }
 
-    private void iniViewModel() {
+    private void iniViewModel(){
         final SortType defaultSortType = from(getArguments());
         viewModel.init(defaultSortType);
     }
@@ -50,10 +50,10 @@ public class SortDialogFragment extends BaseBottomSheetDialogFragment<SortViewMo
         adapter.setItems(sortTypes);
     }
 
-    private void updateState(SortViewModel.UiState state) {
+    private void updateState(SortViewModel.UiState state){
         binding.applyButton.setEnabled(state.isApplyEnable);
 
-        if (state.newSelectedSortType != null) {
+        if (state.newSelectedSortType != null){
             getParentFragmentManager().setFragmentResult(REQUEST_KEY, createBundle(state.newSelectedSortType));
             dismiss();
         }
@@ -65,14 +65,14 @@ public class SortDialogFragment extends BaseBottomSheetDialogFragment<SortViewMo
         return fragment;
     }
 
-    public static SortType from(@Nullable Bundle bundle) {
-        if (bundle == null) {
+    public static SortType from(@Nullable Bundle bundle){
+        if (bundle == null){
             return SortType.BY_NAME;
         }
         return (SortType) bundle.getSerializable(ARG_SELECTED_SORT_TYPE);
     }
 
-    private static Bundle createBundle(SortType sortType) {
+    private static Bundle createBundle(SortType sortType){
         final Bundle bundle = new Bundle();
         bundle.putSerializable(ARG_SELECTED_SORT_TYPE, sortType);
         return bundle;
